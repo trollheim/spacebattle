@@ -15,10 +15,9 @@ dependencies {
 
     testCompile group: 'junit', name: 'junit', version: '4.12'
 }
-task staging(type: Copy){
+task staging{
 
-    into "$buildDir/libs/"
-    from("sb-rest/build/libs/")
+
 
 }
 staging.dependsOn(":sb-rest:bootJar")
