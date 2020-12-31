@@ -27,3 +27,12 @@ dependencies {
 }
 
 
+bootJar  {
+    manifest {
+        attributes(
+                "Main-Class": 'org.trollheim.game.Launcher'
+
+        )
+    }
+}
+
