@@ -17,8 +17,8 @@ dependencies {
 }
 task staging(type: Copy){
 
-    into "$buildDir/libs"
-    from("sb-rest/build/libs")
+    into "$buildDir/libs/"
+    from("sb-rest/build/libs/")
 
 }
 staging.dependsOn(":sb-rest:bootJar")
