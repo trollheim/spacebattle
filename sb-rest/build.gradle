@@ -5,7 +5,7 @@ plugins {
 }
 
 bootJar {
-    enabled = false
+    enabled = true
 }
 
 jar {
@@ -25,10 +25,5 @@ dependencies {
     compile project(":sb-engine")
 
 }
-
-
-
-
-
 
 
