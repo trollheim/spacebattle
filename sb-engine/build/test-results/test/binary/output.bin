@@ -1,2 +1,0 @@
-Ë{"allowedEnergy" : 100, "maximumHitPoints" : 100, "hitPoints" : 100, "scannerReadings" : [{"type":"foe", "position": { "x" :  1.0, "y" : 2.0}}, {"type":"friend", "position": { "x" :  2.0, "y" : 1.0}}]}
-){"type":"foe","position":{"x":1,"y":2}}

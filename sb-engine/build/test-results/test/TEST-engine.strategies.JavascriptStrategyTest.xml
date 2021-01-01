@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="engine.strategies.JavascriptStrategyTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-01-01T13:32:14" hostname="madzia-iv" time="0.299">
-  <properties/>
-  <testcase name="getActions" classname="engine.strategies.JavascriptStrategyTest" time="0.299"/>
-  <system-out><![CDATA[{"allowedEnergy" : 100, "maximumHitPoints" : 100, "hitPoints" : 100, "scannerReadings" : [{"type":"foe", "position": { "x" :  1.0, "y" : 2.0}}, {"type":"friend", "position": { "x" :  2.0, "y" : 1.0}}]}
-{"type":"foe","position":{"x":1,"y":2}}
-]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>
