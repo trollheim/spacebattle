@@ -44,7 +44,9 @@ public class JavascriptStrategy implements ShipStrategy {
     @Override
     public Queue<Action> getActions(ShipStatus status) {
         try {
-            return extract(((Invocable) engine).invokeFunction(FUNCTION, status));
+            ScriptObjectMirror json = (ScriptObjectMirror) engine.eval("("+status.asString()+")");
+
+            return extract(((Invocable) engine).invokeFunction(FUNCTION, json));
         } catch (ScriptException | NoSuchMethodException e) {
             //TODO
             e.printStackTrace();

@@ -62,7 +62,7 @@ public class Simulation {
 		// create ship for each strategy
 		// init scanner data
 		int i = 0;
-		int red = 0, blue = 0;
+		int red, blue;
 
 		do {
 			red = 0;
@@ -126,7 +126,7 @@ public class Simulation {
 				Future<Queue<Action>> future = executor
 						.submit(new CallableWrapper(ship.getShipStrategy(),
 								shipStatus));
-				Queue<Action> queue = null;
+				Queue<Action> queue;
 				try {
 					queue = future.get(5, TimeUnit.SECONDS);
 
@@ -167,12 +167,10 @@ public class Simulation {
 		// resolveShoot
 		world.getWorldObjects().stream().filter(o -> o instanceof SpaceShip)
 				.forEach(ship -> resolveShoot((SpaceShip) ship));
-		;
 
 		// resolveMove
 		world.getWorldObjects().stream().filter(o -> o instanceof SpaceShip)
 				.forEach(ship -> resolveMove((SpaceShip) ship));
-		;
 
 		// checkCollision
 		// removeDestroyedOnes
@@ -246,6 +244,7 @@ public class Simulation {
 		}
 		Vector2d vector = (Vector2d) action.getOptional();
 		if (vector.getLength() > world.LASER_DISTANCE) {
+			//TODO normalize vector
 			return;
 		}
 
@@ -311,7 +310,7 @@ public class Simulation {
 
 	private List<ScannedObject> resolveScanners(SpaceShip ship) {
 
-		List<ScannedObject> list = new ArrayList<ScannedObject>();
+		List<ScannedObject> list = new ArrayList<>();
 
 		float modifier = 0;
 		Action action = getActionForShip(ship, Systems.Scanners);

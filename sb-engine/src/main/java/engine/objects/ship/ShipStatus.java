@@ -1,10 +1,14 @@
 package engine.objects.ship;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import engine.world.ScannedObject;
+import org.trollheim.commons.utils.Stringifyable;
 
-public class ShipStatus {
+public class ShipStatus implements Stringifyable {
+	private final String json;
+
 	public int getAllowedEnergy() {
 		return allowedEnergy;
 	}
@@ -24,6 +28,13 @@ public class ShipStatus {
 		this.maximumHitPoints = maximumHitPoints;
 		this.hitPoints = hitPoints;
 		this.scannerReadings = scannerReadings;
+		json = new StringBuilder()
+				.append("{")
+				.append("\"allowedEnergy\" : ").append(allowedEnergy).append(", ")
+				.append("\"maximumHitPoints\" : ").append(maximumHitPoints).append(", ")
+				.append("\"hitPoints\" : ").append(hitPoints).append(", ")
+				.append("\"scannerReadings\" : ").append(scannerReadings.stream().map(ScannedObject::asString).collect(Collectors.joining(", ","[","]")))
+		.append("}").toString();
 	}
 
 	public List<ScannedObject> getScannerReadings() {
@@ -35,4 +46,8 @@ public class ShipStatus {
 	private final int hitPoints;
 	private final List<ScannedObject> scannerReadings;
 
+	@Override
+	public String asString() {
+		return json;
+	}
 }
