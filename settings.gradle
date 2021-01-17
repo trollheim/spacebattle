@@ -2,4 +2,4 @@ rootProject.name = 'space-battle'
 include 'sb-engine'
 include 'sb-commons'
 include 'sb-rest'
-
+include 'sb-persistence'
