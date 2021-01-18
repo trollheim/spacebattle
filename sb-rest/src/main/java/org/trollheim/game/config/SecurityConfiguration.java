@@ -4,13 +4,17 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.web.csrf.CookieCsrfTokenRepository;
+import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Configuration
-public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
+public class SecurityConfiguration extends WebSecurityConfigurerAdapter  implements WebMvcConfigurer {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
 
-        http.cors().and().csrf().disable()
+        http
+
+                .cors().and().csrf().disable()
                 //.csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse())
 
                 .formLogin()
@@ -22,7 +26,21 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
               .and()
               .logout()
               .logoutUrl("/logout")
-              .deleteCookies("JSESSIONID").and().authorizeRequests().anyRequest().authenticated();
+              .deleteCookies("JSESSIONID").and().authorizeRequests()
+                .antMatchers("/register/**")
+                .anonymous()
+                //.antMatcher("").anonymous()
+                .anyRequest().authenticated()
+
+
+        ;
 //              .logoutSuccessHandler(logoutSuccessHandler());
     }
+
+    @Override
+    public void addViewControllers(ViewControllerRegistry registry) {
+        registry.addViewController("register").setViewName("forward:register/index.html");
+    }
+
+
 }
