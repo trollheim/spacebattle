@@ -35,17 +35,17 @@ class AppRestServiceService {
     }
     saveSketch(sketch) {
         return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
-            return yield this.http.post("sketchAPi/save", { "payload": sketch }).toPromise();
+            return yield this.http.post("sketchAPI/save", { "payload": sketch }).toPromise();
         });
     }
     test() {
         return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
-            return yield this.http.get("sketchAPi/test").toPromise();
+            return yield this.http.get("sketchAPI/test").toPromise();
         });
     }
     loadSketch() {
         return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
-            return yield this.http.get("sketchAPi/load").toPromise();
+            return yield this.http.get("sketchAPI/load").toPromise();
         });
     }
     loadHelp() {
@@ -62,6 +62,42 @@ AppRestServiceService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵd
                 providedIn: 'root'
             }]
     }], function () { return [{ type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"] }]; }, null); })();
+
+
+/***/ }),
+
+/***/ "4K/k":
+/*!********************************************************!*\
+  !*** ./src/app/registration/registration.component.ts ***!
+  \********************************************************/
+/*! exports provided: RegistrationComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RegistrationComponent", function() { return RegistrationComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "fXoL");
+
+
+class RegistrationComponent {
+    constructor() { }
+    ngOnInit() {
+    }
+}
+RegistrationComponent.ɵfac = function RegistrationComponent_Factory(t) { return new (t || RegistrationComponent)(); };
+RegistrationComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: RegistrationComponent, selectors: [["app-registration"]], decls: 2, vars: 0, template: function RegistrationComponent_Template(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "p");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, "registration works!");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    } }, styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3JlZ2lzdHJhdGlvbi9yZWdpc3RyYXRpb24uY29tcG9uZW50LmNzcyJ9 */"] });
+/*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](RegistrationComponent, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
+        args: [{
+                selector: 'app-registration',
+                templateUrl: './registration.component.html',
+                styleUrls: ['./registration.component.css']
+            }]
+    }], function () { return []; }, null); })();
 
 
 /***/ }),
@@ -959,6 +995,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/forms */ "3Pt+");
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/common */ "ofXK");
 /* harmony import */ var ngx_monaco_editor__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ngx-monaco-editor */ "yvwu");
+/* harmony import */ var _registration_registration_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./registration/registration.component */ "4K/k");
+
 
 
 
@@ -992,7 +1030,8 @@ AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector
 (function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵsetNgModuleScope"](AppModule, { declarations: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"],
         _appbuilder_appbuilder_component__WEBPACK_IMPORTED_MODULE_4__["AppbuilderComponent"],
         _appeditor_editor_component__WEBPACK_IMPORTED_MODULE_5__["EditorComponent"],
-        _appeditor_battle_result_modal__WEBPACK_IMPORTED_MODULE_8__["NgbdModalContent"]], imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
+        _appeditor_battle_result_modal__WEBPACK_IMPORTED_MODULE_8__["NgbdModalContent"],
+        _registration_registration_component__WEBPACK_IMPORTED_MODULE_12__["RegistrationComponent"]], imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
         _app_routing_module__WEBPACK_IMPORTED_MODULE_2__["AppRoutingModule"],
         _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_6__["NgbModule"],
         _angular_forms__WEBPACK_IMPORTED_MODULE_9__["FormsModule"],
@@ -1004,7 +1043,8 @@ AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector
                     _app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"],
                     _appbuilder_appbuilder_component__WEBPACK_IMPORTED_MODULE_4__["AppbuilderComponent"],
                     _appeditor_editor_component__WEBPACK_IMPORTED_MODULE_5__["EditorComponent"],
-                    _appeditor_battle_result_modal__WEBPACK_IMPORTED_MODULE_8__["NgbdModalContent"]
+                    _appeditor_battle_result_modal__WEBPACK_IMPORTED_MODULE_8__["NgbdModalContent"],
+                    _registration_registration_component__WEBPACK_IMPORTED_MODULE_12__["RegistrationComponent"]
                 ],
                 imports: [
                     _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],

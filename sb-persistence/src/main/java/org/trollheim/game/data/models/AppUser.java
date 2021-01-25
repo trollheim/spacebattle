@@ -13,8 +13,6 @@ public class AppUser implements UserDetails {
 
 
     @Id
-//    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "appuser_seq")
-//    @SequenceGenerator(name = "appuser_seq", sequenceName = "appuser_seq")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 

@@ -6,7 +6,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+import org.trollheim.game.dto.CreateUserDto;
 import org.trollheim.game.service.SpaceBattleService;
+import org.trollheim.game.service.UserDetailsServiceImpl;
 
 import java.util.Collections;
 import java.util.List;
@@ -18,21 +20,28 @@ public class SpaceBattleRest {
     @Autowired
     private SpaceBattleService spaceBattleService;
 
-    @GetMapping("sketchAPi/load")
+    @Autowired
+    UserDetailsServiceImpl userDetailsService;
+
+    @GetMapping("sketchAPI/load")
     public Map<String, String> load() {
         return Collections.singletonMap("result", spaceBattleService.load());
     }
 
 
-    @GetMapping("sketchAPi/test")
+    @GetMapping("sketchAPI/test")
     public Map<String, List<String>> test() {
         return Collections.singletonMap("result", spaceBattleService.test());
     }
 
-    @PostMapping(value = "sketchAPi/save", consumes = "application/json")
+    @PostMapping(value = "sketchAPI/save", consumes = "application/json")
     public HttpEntity<Void> save(@RequestBody Map<String, String> data) {
         spaceBattleService.save(data.get("payload"));
         return new HttpEntity<>(null);
     }
 
+    @PostMapping(value = "userAPI/register",  consumes = "application/json")
+    public Map<String, String> register(@RequestBody CreateUserDto createUserDto) {
+        return userDetailsService.createUser(createUserDto);
+    }
 }

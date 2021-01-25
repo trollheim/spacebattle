@@ -28,8 +28,9 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter  impleme
               .logoutUrl("/logout")
               .deleteCookies("JSESSIONID").and().authorizeRequests()
                 .antMatchers("/register/**")
-                .anonymous()
-                //.antMatcher("").anonymous()
+                .permitAll().and().authorizeRequests()
+                .antMatchers("/userAPI/register")
+                .permitAll()
                 .anyRequest().authenticated()
 
 
