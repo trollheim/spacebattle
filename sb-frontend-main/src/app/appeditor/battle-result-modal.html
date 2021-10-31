@@ -1,0 +1,26 @@
+<div class="modal-header">
+    <h4 class="modal-title">{{title}}</h4>
+    <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <ngb-carousel>
+      <ng-template  ngbSlide *ngFor="let page of pages; let i = index">
+     
+          <div class="card bg-light">
+          <div class="card-body report-page">
+            <div [innerHTML]="page"></div>
+
+          </div>
+      </div>
+   
+      </ng-template>
+    </ngb-carousel>
+    
+      
+    
+   </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="activeModal.close('Close click')">Close</button>
+  </div>

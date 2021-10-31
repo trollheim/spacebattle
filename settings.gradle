@@ -3,3 +3,6 @@ include 'sb-engine'
 include 'sb-commons'
 include 'sb-rest'
 include 'sb-persistence'
+include 'sb-frontend-main'
+include 'sb-frontend-registration'
+
