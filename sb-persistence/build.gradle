@@ -1,11 +1,11 @@
 plugins {
-    id 'org.springframework.boot' version '2.3.5.RELEASE'
-    id 'io.spring.dependency-management' version '1.0.10.RELEASE'
+    id 'org.springframework.boot' version '3.1.1'
+    id 'io.spring.dependency-management' version '1.1.0'
     id 'java'
 
 }
 jar.enabled(true)
-
+sourceCompatibility = JavaVersion.VERSION_17
 group 'org.trollheim.game'
 version '1.0-SNAPSHOT'
 

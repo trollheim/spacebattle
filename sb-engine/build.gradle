@@ -5,13 +5,22 @@ plugins {
 group 'org.trollheim.game'
 version '1.0-SNAPSHOT'
 
-sourceCompatibility = 1.8
+sourceCompatibility = JavaVersion.VERSION_17
 
 repositories {
     mavenCentral()
 }
 
 dependencies {
-    compile project(":sb-commons")
-    testCompile group: 'junit', name: 'junit', version: '4.12'
+    implementation group: 'org.graalvm.js', name: 'js', version: '22.3.1'
+
+    implementation group: 'org.graalvm.js', name: 'js-scriptengine', version: '22.3.1'
+    implementation project(":sb-commons")
+
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+}
+
+test {
+    useJUnitPlatform()
 }

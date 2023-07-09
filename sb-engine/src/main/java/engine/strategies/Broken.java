@@ -13,7 +13,7 @@ public class Broken implements ShipStrategy {
 	@Override
 	public Queue<Action> getActions(ShipStatus status) {
 		 
-	 		return new ArrayBlockingQueue<Action>(5);
+	 		return new ArrayBlockingQueue<>(5);
 	}
 
 	@Override

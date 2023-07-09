@@ -1,9 +1,9 @@
 package org.trollheim.game.data.models;
 
+import jakarta.persistence.*;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import javax.persistence.*;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;

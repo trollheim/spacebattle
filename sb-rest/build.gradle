@@ -1,7 +1,8 @@
 plugins {
-    id 'org.springframework.boot' version '2.3.5.RELEASE'
-    id 'io.spring.dependency-management' version '1.0.10.RELEASE'
+    id 'org.springframework.boot' version '3.1.1'
+    id 'io.spring.dependency-management' version '1.1.0'
     id 'java'
+
 }
 
 bootJar {
@@ -11,10 +12,11 @@ bootJar {
 jar {
     enabled = true
 }
+
 group = 'org.trollheim.game'
 version = '0.0.1-SNAPSHOT'
 
-sourceCompatibility = '1.8'
+sourceCompatibility = JavaVersion.VERSION_17
 
 repositories {
     mavenCentral()
@@ -32,7 +34,7 @@ dependencies {
 }
 
 
-build.dependsOn(':sb-frontend-registration:ngBuild')
+
 
 
 
