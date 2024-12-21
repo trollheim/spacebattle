@@ -1,0 +1,34 @@
+<div class="card card-body bg-light">
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-4">Registration</h1>
+      <p class="lead">Submit form to register user.</p>
+    </div>
+  </div>
+
+  
+     <div class="form-group">
+      <label for="emailInput">Username</label>
+      <input [(ngModel)]="request.username" type="text" class="form-control" id="emailInput" placeholder="Enter username">
+    </div>
+    <div class="form-group">
+        <label for="passwordInput">Password</label>
+        <input [(ngModel)]="request.password" type="password" class="form-control" id="passwordInput" placeholder="Enter password">
+      </div>
+      <div class="form-group">
+        <label for="passwordVerifyInput">Verify Password</label>
+        <input [(ngModel)]="request.verify" type="password" class="form-control" id="passwordVerifyInput" placeholder="Re-enter password">
+      </div>
+      <div class="form-group">
+        <label for="registrationCodeInput">Invide Code</label>
+        <input [(ngModel)]="request.inviteCode" type="text" class="form-control" id="registrationCodeInput" placeholder="Enter invite code">
+      </div>
+    <button  (click)="createUser()" type="button" class="btn btn-primary btn-lg btn-block" >Submit</button>
+    <br/>
+    <div  *ngIf="errors.length>0" class="alert alert-danger" role="alert">
+        <p *ngFor="let err of errors">
+            {{err}}
+         </p>
+      </div>
+
+ </div>
