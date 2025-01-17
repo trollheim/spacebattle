@@ -19,7 +19,7 @@ public class Launcher {
     public CommandLineRunner demo(AppUserRepository repository, PasswordEncoder passwordEncoder) {
         return (args) -> {
             // save a few customers
-//            repository.save(new AppUser("user1", passwordEncoder.encode("password1")));
+            repository.save(new AppUser("user1", passwordEncoder.encode("password1")));
             repository.findAll().stream().forEach(user -> System.out.println(user.getId() + " " + user.getUsername() + " " + user.getPassword()));
         };
     }
